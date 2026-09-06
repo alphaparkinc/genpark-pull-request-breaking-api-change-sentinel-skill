@@ -1,0 +1,36 @@
+{
+  "name": "genpark-pull-request-breaking-api-change-sentinel-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Git PR diff semantic analyzer detecting breaking REST/GraphQL API schema mutations and recommending SemVer bumps.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "genpark",
+  "category": "service",
+  "tags": [
+    "breaking-changes",
+    "api-sentinel",
+    "pull-request",
+    "semver",
+    "code-review"
+  ],
+  "inputs": {
+    "pr_number": {
+      "type": "integer"
+    },
+    "target_schema": {
+      "type": "string"
+    }
+  },
+  "outputs": {
+    "audit_run_id": {
+      "type": "string"
+    },
+    "has_breaking_changes": {
+      "type": "boolean"
+    },
+    "semver_recommendation": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
